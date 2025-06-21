@@ -135,12 +135,13 @@ export default function App() {
       <Content
         id="inicio"
         style={{
-          padding: "110px 12px 40px",
+          padding: "110px 8px 40px",
           maxWidth: 760,
+          width: "100%",
           margin: "auto",
           display: "flex",
           flexDirection: "column",
-          gap: 28, // compacto
+          gap: 28,
         }}
       >
         {/* Imagen principal */}
@@ -499,11 +500,12 @@ export default function App() {
         </motion.div>
       </Content>
 
-      {/* BOTÓN FLOTANTE WHATSAPP */}
+      {/* BOTÓN FLOTANTE WHATSAPP RESPONSIVO */}
       <a
         href="https://wa.me/56954136764"
         target="_blank"
         rel="noopener noreferrer"
+        className="wsp-fab"
         style={{
           position: "fixed",
           bottom: 28,
@@ -518,6 +520,8 @@ export default function App() {
           boxShadow: "0 6px 24px rgba(37,211,102,0.22)",
           zIndex: 2000,
           animation: "pulse 1.7s infinite",
+          transition: "all 0.18s cubic-bezier(.4,2,.6,1)",
+          touchAction: "manipulation"
         }}
         aria-label="Consulta por WhatsApp"
       >
@@ -528,6 +532,29 @@ export default function App() {
           0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.17); }
           70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
           100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.13); }
+        }
+        @media (max-width: 600px) {
+          .wsp-fab {
+            right: 12px !important;
+            bottom: 12px !important;
+            width: 48px !important;
+            height: 48px !important;
+          }
+          .wsp-fab .anticon {
+            font-size: 26px !important;
+          }
+          .ant-layout-content {
+            padding-left: 2px !important;
+            padding-right: 2px !important;
+          }
+          .ant-card {
+            border-radius: 10px !important;
+            padding-left: 2px !important;
+            padding-right: 2px !important;
+          }
+          .ant-typography, .ant-card-head-title {
+            font-size: 15px !important;
+          }
         }
       `}</style>
 
