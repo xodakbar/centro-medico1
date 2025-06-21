@@ -28,7 +28,7 @@ import {
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import imagenPrincipal from "./assets/img/imagen Principal.jpg";
+import imagenPrincipal from "./assets/img/imagen_principal.jpg";
 import logo from "./assets/img/logo.png";
 
 const { Header, Content, Footer } = Layout;
