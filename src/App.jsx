@@ -419,49 +419,47 @@ export default function App() {
                     </Form.Item>
                   </Col>
                 </Row>
+                {/* BOTONES RESPONSIVOS */}
                 <Form.Item style={{ marginTop: 18, marginBottom: 4 }}>
-                  <Row gutter={16} justify="space-between">
-                    <Col xs={12}>
-                      <Button
-                        type="ghost"
-                        icon={<ReloadOutlined />}
-                        onClick={() => form.resetFields()}
-                        block
-                        style={{
-                          borderRadius: 8,
-                          fontWeight: 500,
-                          border: "1px solid #b2c6d5",
-                          background: "#f0f5ff",
-                          transition: "all 0.2s",
-                        }}
-                      >
-                        Limpiar
-                      </Button>
-                    </Col>
-                    <Col xs={12}>
-                      <Button
-                        type="primary"
-                        icon={<SendOutlined />}
-                        htmlType="submit"
-                        loading={loading}
-                        block
-                        style={{
-                          borderRadius: 8,
-                          fontWeight: 600,
-                          background: "linear-gradient(90deg,#25D366 40%,#08A045 100%)",
-                          border: "none",
-                          color: "#fff",
-                          transition: "box-shadow 0.2s",
-                          boxShadow: "0 4px 16px 0 rgba(37,211,102,0.11)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        Enviar Consulta por WhatsApp
-                      </Button>
-                    </Col>
-                  </Row>
+                  <div className="form-buttons-row">
+                    <Button
+                      type="ghost"
+                      icon={<ReloadOutlined />}
+                      onClick={() => form.resetFields()}
+                      block
+                      style={{
+                        borderRadius: 8,
+                        fontWeight: 500,
+                        border: "1px solid #b2c6d5",
+                        background: "#f0f5ff",
+                        transition: "all 0.2s",
+                      }}
+                    >
+                      Limpiar
+                    </Button>
+                    <Button
+                      type="primary"
+                      icon={<SendOutlined />}
+                      htmlType="submit"
+                      loading={loading}
+                      block
+                      style={{
+                        borderRadius: 8,
+                        fontWeight: 600,
+                        background: "linear-gradient(90deg,#25D366 40%,#08A045 100%)",
+                        border: "none",
+                        color: "#fff",
+                        transition: "box-shadow 0.2s",
+                        boxShadow: "0 4px 16px 0 rgba(37,211,102,0.11)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginLeft: 16,
+                      }}
+                    >
+                      Enviar Consulta por WhatsApp
+                    </Button>
+                  </div>
                 </Form.Item>
               </Form>
             </Card>
@@ -533,6 +531,14 @@ export default function App() {
           70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
           100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.13); }
         }
+        .form-buttons-row {
+          display: flex;
+          flex-direction: row;
+          gap: 0;
+        }
+        .form-buttons-row > button {
+          width: 48%;
+        }
         @media (max-width: 600px) {
           .wsp-fab {
             right: 12px !important;
@@ -554,6 +560,14 @@ export default function App() {
           }
           .ant-typography, .ant-card-head-title {
             font-size: 15px !important;
+          }
+          .form-buttons-row {
+            flex-direction: column;
+            gap: 12px;
+          }
+          .form-buttons-row > button {
+            width: 100%;
+            margin-left: 0 !important;
           }
         }
       `}</style>
